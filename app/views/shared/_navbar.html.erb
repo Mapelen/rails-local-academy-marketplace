@@ -35,14 +35,18 @@
         <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+<!--           <li><a href="#">Dashboard</a></li> -->
+          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
         </ul>
       </div>
     </div>
 
     <!-- Button (call-to-action) -->
-    <a href="" class="navbar-wagon-item navbar-wagon-button btn">Post an expedition</a>
+    <!-- <a href="/users/sign_up" class="navbar-wagon-item navbar-wagon-button btn">Sign Up</a> -->
+    <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->

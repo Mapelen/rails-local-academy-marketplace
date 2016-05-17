@@ -1,0 +1,20 @@
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <ul class="list-inline">
+          <% %w(youtube instagram facebook twitter).each do |network| %>
+            <li>
+              <% link_to "#" do %>
+                <i class="fa fa-<%= network %>"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-8 text-right">
+        <p>This is a footer !</p>
+      </div>
+    </div>
+  </div>
+</div>

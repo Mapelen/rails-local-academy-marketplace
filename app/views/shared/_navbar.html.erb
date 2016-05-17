@@ -41,11 +41,19 @@
       </div>
     </div>
 
+    <!--Login In Button -->
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% else %>
+      <%= link_to "Login", "#", class: "navbar-wagon-item", data: { target: "#login", toggle: "modal" } %>
+    <% end %>
+
     <!-- Button (call-to-action) -->
     <!-- <a href="/users/sign_up" class="navbar-wagon-item navbar-wagon-button btn">Sign Up</a> -->
     <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% else %>
+    <%= link_to "Sign Up", "#", class: "navbar-wagon-item navbar-wagon-button btn", data: { target: "#signup", toggle: "modal" } %>
     <% end %>
   </div>
 

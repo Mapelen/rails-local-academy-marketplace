@@ -46,7 +46,7 @@
     <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <% else %>
-    <%= link_to "Sign in", new_user_session_path, :method => :get, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "Sign in", "#", class: "navbar-wagon-item navbar-wagon-button btn", data: { target: "#login", toggle: "modal" } %>
     <% end %>
   </div>
 

@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516164014) do
+ActiveRecord::Schema.define(version: 20160517093450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "picture_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "airport"
+  end
+
+  create_table "expeditions", force: :cascade do |t|
+    t.date     "starts_on"
+    t.date     "ends_on"
+    t.text     "description"
+    t.integer  "capacity"
+    t.string   "theme"
+    t.string   "picture_url"
+    t.string   "title"
+    t.integer  "destination_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "expeditions", ["destination_id"], name: "index_expeditions_on_destination_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +58,5 @@ ActiveRecord::Schema.define(version: 20160516164014) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "expeditions", "destinations"
 end

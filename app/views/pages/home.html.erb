@@ -1,5 +1,5 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.unsplash.it/900/600');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://i.imgur.com/M0qx9fN.jpg');">
   <div class="banner-content">
     <h1>Expedition Learnings</h1>
     <p>All the details you need to choose the learning expedition that’s right for you and apply in one place.</p>
@@ -8,15 +8,16 @@
 </div>
 
 <div class="container">
-  <div class="banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://www.unsplash.it/900/600');">
+<% @destinations.each do |destination| %>
+  <div class="banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= destination.picture_url %>');">
     <div class="banner-content">
-      <h2>Silicon Valley</h2>
+      <h2><%= destination.name %></h2>
       <p>PLANIFIEZ VOTRE VOYAGE D'AFFAIRE AU SEIN DE LA SILICON VALLEY. <br>
-      Mêlez découverte de l'innovation et découverte culturelle au sein de la baie de San Francisco,en immersion avec la communauté francophone 3.0 !
+      <%= destination.description %>
       </p>
     </div>
   </div>
-  <div class="wrapper" id="wrapper-card">
+    <div class="wrapper" id="wrapper-card">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
@@ -62,4 +63,5 @@
       </div>
     </div>
   </div>
+<% end %>
 </div>

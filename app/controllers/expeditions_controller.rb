@@ -1,12 +1,12 @@
 class ExpeditionsController < ApplicationController
-  before_action :set_params, only: [:create, :edit, :update]
+  before_action :find_expedition, only: [:show, :edit, :update, :destroy]
 
   def index
     @expeditions = Expedition.all
   end
 
   def show
-    @expedition = find_expedition
+    @destination = @expedition.destination
   end
 
   def new
@@ -14,7 +14,7 @@ class ExpeditionsController < ApplicationController
   end
 
   def create
-    @expedition = Expedition.new(set_expedition)
+    @expedition = Expedition.new(expedition_params)
     if @expedition.save
       redirect_to expedition_path(@expedition)
     else
@@ -31,14 +31,13 @@ class ExpeditionsController < ApplicationController
   end
 
   def destroy
-    @expedition = find_expedition
     @expedition.destroy
     redirect_to expeditions_path
   end
 
   private
 
-  def set_params
+  def expedition_params
     params.require(:expedition).permit(:title, :photo, :photo_cache)
   end
 

@@ -1,0 +1,40 @@
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://i.imgur.com/M0qx9fN.jpg');">
+  <div class = "banner-expedition">
+    <h1><%= @expedition.title %></h1>
+    <p><%= @expedition.description %></p>
+    <h2>#<%= @expedition.theme %></h2>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class ="organizer">
+          <h2>The organizer</h2>
+        </div>
+        <div class = "destination">
+          <h2>The destination: <%= @destination.name %> </h2>
+          <p><%= @destination.description %></p>
+        </div>
+        <div class = "lex" >
+          <p><%= @expedition.title %></p>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class = "panel">
+          <h2><strong>Join this expedition</strong></h2>
+          <p>The next one is on:</p>
+          <p><%= @expedition.starts_on %></p>
+          <button type = "submit" class = "btn btn-primary">I apply!</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

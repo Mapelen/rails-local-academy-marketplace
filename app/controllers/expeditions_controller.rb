@@ -1,0 +1,2 @@
+class ExpeditionsController < ApplicationController
+end

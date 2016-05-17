@@ -1,35 +1,47 @@
 .card {
-  height: 30vh;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 25vh;
   background-size: cover !important;
   color: white;
   position: relative;
-  border-radius: 5px;
-  margin-top: 10px;
+  padding-top: 40px;
+  margin: 15px 0px 15px 0px;
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  left: 10px;
+  top: 20px;
+  border: 1px solid white;
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: -23px;
+  right: 0px;
   font-size: 10px;
   text-transform: uppercase;
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 10px;
 }
 .card-description h2 {
   font-size: 24px;
 }
 .card-description p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   font-size: 13px;
   }
+.card-title {
+    position: absolute;
+    top: -52px;
+  }
+
+.card-title h3 {
+  color: $dark;
+  font-size: 20px;
+}
+
+
 .card-link {
   position: absolute;
   top: 0;
@@ -43,28 +55,27 @@
   opacity: 0.1;
 }
 
-#wrapper-card{
-  margin-top: -70px;
-  padding: 30px;
-}
-
 .card-cta{
-  height: 30vh;
+  height: 25vh;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
-  border-radius: 5px;
-  margin-top: 10px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  padding-top: 40px;
+  margin: 15px 0px 15px 0px;
 }
 
 .card-cta-description h3{
-  font-size: 80px;
+  font-size: 60px;
 }
+
+.card-cta-description p{
+    margin-bottom: 30px;
+}
+
 // .card-cta-link {
 //   top: 0;
 //   bottom: 0;

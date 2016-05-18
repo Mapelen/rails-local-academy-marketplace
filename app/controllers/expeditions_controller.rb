@@ -1,5 +1,6 @@
 class ExpeditionsController < ApplicationController
   before_action :find_expedition, only: [:show, :edit, :update, :destroy]
+  before_action :find_destination, only: [:new, :create]
 
   def index
     @expeditions = Expedition.all
@@ -7,15 +8,17 @@ class ExpeditionsController < ApplicationController
 
   def show
     @destination = @expedition.destination
+    @destinations = Destination.all
     @participation = Participation.new
   end
 
   def new
     @expedition = Expedition.new
+    @destinations = Destination.all
   end
 
   def create
-    @expedition = Expedition.new(expedition_params)
+    @expedition = @destination.expeditions.build(expedition_params)
     if @expedition.save
       redirect_to expedition_path(@expedition)
     else
@@ -39,10 +42,14 @@ class ExpeditionsController < ApplicationController
   private
 
   def expedition_params
-    params.require(:expedition).permit(:title, :photo, :photo_cache)
+    params.require(:expedition).permit(:title, :description, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
   end
 
   def find_expedition
     @expedition = Expedition.find(params[:id])
+  end
+
+  def find_destination
+    @destination = Destination.find(params[:expedition][:destination])
   end
 end

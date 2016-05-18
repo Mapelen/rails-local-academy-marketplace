@@ -1,5 +1,5 @@
 class Destination < ActiveRecord::Base
-  has_many :expeditions
+  has_many :expeditions, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true

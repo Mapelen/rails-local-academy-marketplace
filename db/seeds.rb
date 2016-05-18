@@ -15,28 +15,23 @@ Destination.create!(name: "Central Europe", description: "From Paris to Berlin, 
 s = Destination.create!(name: "Shenzhen", description: "Let's hop on a special journey and dive into the factory of the world!", picture_url: "https://scdn3.thomascook.com/crop?imageUrl=http://magnolia.production.thomascook.io/wcms/dam/tcuk/city-breaks/paris/1hero1.jpg&maxWidth=1200&maxHeight=0", airport: "HKG")
 
 
-expedition1 = Expedition.new(title: "The Valley Hack", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", picture_url: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
+expedition1 = Expedition.new(title: "The Valley Hack", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", photo: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
 expedition1.destination = silicon
 expedition1.save
 
-expedition2 = Expedition.new(title: "Yo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", picture_url: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
+expedition2 = Expedition.new(title: "Yo", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", photo: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
 expedition2.destination = silicon
 expedition2.save
 
-expedition3 = Expedition.new(title: "Super", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", picture_url: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
+expedition3 = Expedition.new(title: "Super", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", photo: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
 expedition3.destination = silicon
 expedition3.save
 
-expedition4 = Expedition.new(title: "Yallah", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", picture_url: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
+expedition4 = Expedition.new(title: "Yallah", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit!", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", photo: "http://www.c2csanfrancisco.com/wp-content/uploads/2012/03/golden-gate-bridge-and-beach-cropped.jpg")
 expedition4.destination = silicon
 expedition4.save
 # Destination.create(name: "Southern Europe")
 
 # Destination.create(name: "India")
 # Destination.create(name: "U.S. Northeast")
-# Destination.create(name: "South east Asia")
-Expedition.create!(title: "Hacking like an IOT startuper", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", description: "Come in Shenzhen and know how to hack like a sucessessful Kickstarter entrepreneur.", destination: s)
-
-
-Participation.create(user_id: 1, expedition_id: 1, is_company: true)
 

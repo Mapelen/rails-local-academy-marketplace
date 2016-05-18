@@ -10,8 +10,11 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   get 'home' => 'pages#home'
-  resources :expeditions
+  resources :expeditions do
+    resources :participations, only: [:new, :create]
+  end
   resources :destinations
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

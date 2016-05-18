@@ -7,6 +7,7 @@ class ExpeditionsController < ApplicationController
 
   def show
     @destination = @expedition.destination
+    @participation = Participation.new
   end
 
   def new

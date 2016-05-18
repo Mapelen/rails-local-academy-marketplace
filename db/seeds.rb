@@ -19,3 +19,8 @@ s = Destination.create!(name: "Shenzhen", description: "Let's hop on a special j
 # Destination.create(name: "India")
 # Destination.create(name: "U.S. Northeast")
 # Destination.create(name: "South east Asia")
+Expedition.create!(title: "Hacking like an IOT startuper", starts_on: "July 1st, 2016", theme: "IOT", capacity: "10", description: "Come in Shenzhen and know how to hack like a sucessessful Kickstarter entrepreneur.", destination: s)
+
+
+Participation.create(user_id: 1, expedition_id: 1, is_company: true)
+

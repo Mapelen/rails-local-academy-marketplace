@@ -10,6 +10,11 @@ $font-size-base:          $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $header-font;
 
+$font-size-h1: floor(($font-size-base * 4.6));
+$font-size-h2: floor(($font-size-base * 3.6));
+$font-size-h3: floor(($font-size-base * 2.6));
+
+
 // Semantic color scheme
 $brand-primary:   $blue;
 $brand-success:   $green;
@@ -21,3 +26,4 @@ $brand-warning:   $orange;
 $border-radius-base:  2px;
 $border-radius-large: 2px;
 $border-radius-small: 2px;
+

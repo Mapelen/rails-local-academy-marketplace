@@ -6,62 +6,67 @@
     <a class="btn btn-danger btn-lg">Choose your destination</a>
   </div>
 </div>
-
 <div class="container">
-<% @destinations.each do |destination| %>
-  <div class="banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= destination.picture_url %>');">
-    <div class="banner-content">
-      <h2><%= destination.name %></h2>
-      <p>PLANIFIEZ VOTRE VOYAGE D'AFFAIRE AU SEIN DE LA SILICON VALLEY. <br>
-      <%= destination.description %>
-      </p>
-    </div>
-  </div>
-    <div class="wrapper" id="wrapper-card">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h3>Some stuff</h3>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <img class="card-user avatar" src="http://placehold.it/100/100">
-          <a class="card-link" href="#" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h3>Some stuff</h3>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <img class="card-user avatar" src="http://placehold.it/100/100">
-          <a class="card-link" href="#" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h3>Some stuff</h3>
-            <p>Very cool stuff, useful and smart</p>
-          </div>
-          <img class="card-user avatar" src="http://placehold.it/100/100">
-          <a class="card-link" href="#" ></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card-cta text-center" style="background-color: #F07E98 !important;">
-          <div class="card-cta-description">
-            <h3><i class="fa fa-plus" aria-hidden="true"></i>
-            </h3>
-            <p>More Learning Expeditions in the Valley</p>
-          </div>
-        </div>
+  <% @destinations.each do |destination| %>
+    <div class="banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= destination.picture_url %>');">
+      <div class="banner-content">
+        <h2><%= destination.name %></h2>
+        <p>PLANIFIEZ VOTRE VOYAGE D'AFFAIRE AU SEIN DE LA SILICON VALLEY. <br>
+        <%= destination.description %>
+        </p>
       </div>
     </div>
-  </div>
-<% end %>
+      <div class="wrapper-card">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
+              <div class="card-category"><span class="label label-success">Popular</span></div>
+              <div class="card-title">
+                <h3>Expedition IOT</h3>
+              </div>
+              <div class="card-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
+              </div>
+              <img class="card-user avatar" src="http://placehold.it/100/100">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
+              <div class="card-category"><span class="label label-success">Popular</span></div>
+              <div class="card-title">
+                <h3>Expedition IOT</h3>
+              </div>
+              <div class="card-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
+              </div>
+              <img class="card-user avatar" src="http://placehold.it/100/100">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.unsplash.it/900/600/?random');">
+              <div class="card-category"><span class="label label-success">Popular</span></div>
+              <div class="card-title">
+                <h3>Expedition IOT</h3>
+              </div>
+              <div class="card-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
+              </div>
+              <img class="card-user avatar" src="http://placehold.it/100/100">
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card-cta text-center" style="background-color: #F07E98 !important;">
+              <div class="card-cta-description">
+                <h3><i class="fa fa-plus" aria-hidden="true"></i>
+                </h3>
+                <p>More Learning Expeditions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
 </div>

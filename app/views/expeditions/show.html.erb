@@ -1,4 +1,3 @@
-
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://i.imgur.com/M0qx9fN.jpg');">
   <div class = "banner-expedition">
     <h1><%= @expedition.title %></h1>
@@ -7,34 +6,46 @@
   </div>
 </div>
 
-
-
-
 <div class="container">
-    <div class="wrapper">
+  <div class="wrapper">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class ="organizer">
+      <div class="col-xs-12 col-md-9 ">
+<!--         <div class ="organizer">
           <h2>The organizer</h2>
-        </div>
+        </div> -->
         <div class = "destination">
           <h2>The destination: <%= @destination.name %> </h2>
           <p><%= @destination.description %></p>
         </div>
         <div class = "lex" >
           <p><%= @expedition.title %></p>
-
+        </div>
       </div>
 
-      <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="col-xs-12 col-md-3">
         <div class = "panel">
-          <h2><strong>Join this expedition</strong></h2>
-          <p>The next one is on:</p>
-          <p><%= @expedition.starts_on %></p>
-          <button type = "submit" class = "btn btn-primary">I apply!</button>
+          <% if @expedition.users.include?(current_user) %>
+            <p class="bg-success">You're signed up!</p>
+          <% else %>
+            <div class = "form">
+              <%= simple_form_for([@expedition, @participation]) do |f| %>
+              <h2> Next expedition is on: <%= @expedition.starts_on %></h2>
+              <%= f.collection_radio_buttons :is_company, [[true, 'Company'] ,[false, 'Individual']], :first, :last%>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :expedition_id, value: @expedition.id %>
+              <%= f.submit "I'm signing up!", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
 
     </div>
   </div>
-</div>
+</div><!--
+
+  <h2>Send the information</h2>
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input type="text" name="name" id="name" placeholder="Email" required/>
+
+ -->

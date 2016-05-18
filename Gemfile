@@ -18,6 +18,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 group :development, :test do
   gem 'binding_of_caller'

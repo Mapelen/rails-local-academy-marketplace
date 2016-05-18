@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160518102935) do
+=======
+ActiveRecord::Schema.define(version: 20160518100025) do
+>>>>>>> f49a506eebd5333d65a975d8f3de2ad475727cd3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +46,17 @@ ActiveRecord::Schema.define(version: 20160518102935) do
   add_index "expeditions", ["destination_id"], name: "index_expeditions_on_destination_id", using: :btree
   add_index "expeditions", ["user_id"], name: "index_expeditions_on_user_id", using: :btree
 
+  create_table "participations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "expedition_id"
+    t.boolean  "is_company"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "participations", ["expedition_id"], name: "index_participations_on_expedition_id", using: :btree
+  add_index "participations", ["user_id"], name: "index_participations_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -55,6 +70,13 @@ ActiveRecord::Schema.define(version: 20160518102935) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "picture"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "token"
+    t.datetime "token_expiry"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -62,4 +84,6 @@ ActiveRecord::Schema.define(version: 20160518102935) do
 
   add_foreign_key "expeditions", "destinations"
   add_foreign_key "expeditions", "users"
+  add_foreign_key "participations", "expeditions"
+  add_foreign_key "participations", "users"
 end

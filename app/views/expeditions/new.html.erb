@@ -6,6 +6,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for @expedition do |f| %>
         <%= f.input :title, label: "Expedition title" %>
+        <%= f.input :destination, label: "Destination", collection: @destinations %>
         <%= f.input :description, label: "Expedition description" %>
         <%= f.input :capacity, label: "Expedition capacity" %>
         <%= f.input :theme, label: "Expedition theme" %>

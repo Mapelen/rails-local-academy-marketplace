@@ -7,7 +7,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, kind: 'linkedin') if is_navigational_format?
     else
       # session['devise.linkedin_data'] = request.env['omniauth.auth']
-      redirect_to new_user_registration_url
+      set_flash_message(:notice, :success, kind: 'linkedin') if is_navigational_format?
+      redirect_to home_path
     end
   end
 end

@@ -45,8 +45,7 @@
                 <p><%= exp.description %></p>
               </div>
               <img class="card-user avatar" src="http://placehold.it/100/100">
-              <%= link_to "", "", class: "card-link" %>
-              <a class="card-link" href="#" ></a>
+              <%= link_to "", expedition_path(exp), class: "card-link" %>
             </div>
           </div>
           <% end %>
@@ -54,7 +53,7 @@
             <div class="card-cta text-center" style="background-color: #F07E98 !important;">
               <div class="card-cta-description">
                 <h3><i class="fa fa-plus" aria-hidden="true"></i>
-                 <%= link_to "", "", class: "card-link" %>
+                 <%= link_to "", destination_path(destination), class: "card-link" %>
                 </h3>
                 <p>More Learning Expeditions</p>
               </div>

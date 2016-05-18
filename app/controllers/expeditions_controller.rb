@@ -1,6 +1,6 @@
 class ExpeditionsController < ApplicationController
   before_action :find_expedition, only: [:show, :edit, :update, :destroy]
-  before_action :find_destination, only: [:new, :create]
+  before_action :find_destination, only: [:create]
 
   def index
     @expeditions = Expedition.all

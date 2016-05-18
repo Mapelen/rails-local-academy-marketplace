@@ -16,6 +16,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'cloudinary'
+gem 'carrierwave'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 

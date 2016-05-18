@@ -18,11 +18,21 @@
     letter-spacing: 20px;
     transition: color 0.5s ease;
   }
-}
-.fa:hover {
-  color: $red;
+
+  li {
+    color: white;
+
+    li:hover {
+      color: $red;
+    }
+  }
+
+  .fa {
+    color: white;
+
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
-.fa {
-  color: white;
-}

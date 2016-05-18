@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/lewagon.png" />
+    <%= image_tag("logo_expedution.png", :alt => "logo") %>
   </a>
 
   <!-- Right Navigation -->
@@ -16,18 +16,18 @@
     </form>
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a> -->
 
     <!-- Text link -->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">About</a>
 
     <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
+    <!-- <a href="" class="navbar-wagon-item navbar-wagon-link">
       <div class="badge-container">
         <i class="fa fa-envelope-o"></i>
         <div class="badge badge-blue">3</div>
       </div>
-    </a>
+    </a> -->
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
@@ -41,6 +41,7 @@
       </div>
     </div>
 
+    <%= link_to "Organize Expedition", new_expedition_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
     <!--Login In Button -->
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-button btn" %>

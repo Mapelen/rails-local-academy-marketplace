@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @destinations = Destination.all
+    @expeditions = Expedition.all
+
   end
 end

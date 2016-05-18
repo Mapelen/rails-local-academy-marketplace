@@ -5,3 +5,4 @@ class Destination < ActiveRecord::Base
   validates :description, presence: true
   validates :airport, presence: true
 end
+

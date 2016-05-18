@@ -7,12 +7,14 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'f8c3561b9e9d0b3df0ab2336e98d716388a3cee462022684de38ae78f65abed228b544f2789416a7c4db75dc33dd75b20afcc2d42cd2834973a217e9ec02306a'
+  config.omniauth :linkedin, ENV["LK_ID"], ENV["LK_SECRET"], scope: 'r_emailaddress', info_fields: 'email, first_name,last_name'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'hello@localacademy.com'
+  config.secret_key = 'cad7f59c83dd917ff3c16029a629cff2dbbdb9500bf8850d7e7b797c70f3d55d1068049b2ebb5c4c206bbda1298442ccc027478a7c627f2caf3d85d12e213620'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

@@ -24,9 +24,9 @@
 
       <div class="col-xs-12 col-md-3">
         <div class = "panel">
-          <%= if @expedition.participations.find(user_id = current_user.id) %>
+          <% if @expedition.users.include?(current_user) %>
             <p class="bg-success">You're signed up!</p>
-          <%= else %>
+          <% else %>
             <div class = "form">
               <%= simple_form_for([@expedition, @participation]) do |f| %>
               <h2> Next expedition is on: <%= @expedition.starts_on %></h2>
@@ -36,7 +36,7 @@
               <%= f.submit "I'm signing up!", class: "btn btn-primary" %>
               <% end %>
             </div>
-          <%= end %>
+          <% end %>
         </div>
       </div>
 

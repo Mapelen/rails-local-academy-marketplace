@@ -16,7 +16,12 @@
         <% end -%>
       </div>
       <div class="modal-footer">
-        <%= f.submit "Sign in", :class => 'btn btn-small btn-success' %>
+        <%= f.submit "Sign in", :class => 'btn btn-small btn-success' %> <br />
+        <div class="text-center">
+          <%= link_to user_omniauth_authorize_path(:linkedin) do %>
+          <%= image_tag "http://i.imgur.com/VQfHpzd.png" %>
+          <% end %>
+        </div>
       </div>
       <div class="list-inline">
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

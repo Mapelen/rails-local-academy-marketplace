@@ -3,7 +3,23 @@
   <div class="banner-content">
     <h1>Expedition Learnings</h1>
     <p>All the details you need to choose the learning expedition that’s right for you and apply in one place.</p>
-    <a class="btn btn-danger btn-lg">Choose your destination</a>
+
+    <div class="flex-center">
+      <div class="dropdown">
+      <button class="btn btn-danger btn-lg dropdown-toggle" id="btn-header" stype="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Choose your destination
+        <span class="caret"></span>
+      </button>
+
+        <ul class="dropdown-menu" id="btn-header-dropdown" aria-labelledby="dropdownMenu1">
+        <% @destinations.each do |destination| %>
+          <li><%= link_to destination.name, destination_path(destination) %></li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+
+
   </div>
 </div>
 <div class="container">
@@ -28,6 +44,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
               </div>
               <img class="card-user avatar" src="http://placehold.it/100/100">
+              <%= link_to "", "", class: "card-link" %>
               <a class="card-link" href="#" ></a>
             </div>
           </div>
@@ -41,7 +58,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
               </div>
               <img class="card-user avatar" src="http://placehold.it/100/100">
-              <a class="card-link" href="#" ></a>
+               <%= link_to "", "", class: "card-link" %>
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
@@ -54,13 +71,14 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse maiores rem incidunt alias earum voluptatibus maxime officia fugiat!</p>
               </div>
               <img class="card-user avatar" src="http://placehold.it/100/100">
-              <a class="card-link" href="#" ></a>
+               <%= link_to "", "", class: "card-link" %>
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card-cta text-center" style="background-color: #F07E98 !important;">
               <div class="card-cta-description">
                 <h3><i class="fa fa-plus" aria-hidden="true"></i>
+                 <%= link_to "", "", class: "card-link" %>
                 </h3>
                 <p>More Learning Expeditions</p>
               </div>

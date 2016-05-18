@@ -15,10 +15,12 @@
         <%= f.password_field :password_confirmation %></div>
       </div>
       <div class="modal-footer">
-        <div class="class text-center"><%= f.submit "Sign up", :class => 'btn btn-small btn-success' %></div>  <br />
-        <div class="text-center"><%= link_to user_omniauth_authorize_path(:linkedin) do %>
+        <div class="text-center"><%= f.submit "Sign up", :class => 'btn btn-small btn-success' %></div>  <br />
+        <div class="text-center">
+          <%= link_to user_omniauth_authorize_path(:linkedin) do %>
           <%= image_tag "http://i.imgur.com/VQfHpzd.png" %>
-        <% end %><div>
+          <% end %>
+        </div>
       </div>
       <% end %>
     </div><!-- /.modal-content -->

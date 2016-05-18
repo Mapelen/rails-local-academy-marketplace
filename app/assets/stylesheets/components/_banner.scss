@@ -47,3 +47,20 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
+.half-header {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.half-banner {
+  height: 80vh;
+  width: 50%;
+  background-position: center;
+}
+
+.half-banner-description {
+  width: 50%;
+  padding: 30px;
+}
+

@@ -6,6 +6,7 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @expeditions = @destination.expeditions
   end
 
   private

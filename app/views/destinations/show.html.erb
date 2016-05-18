@@ -6,3 +6,26 @@
   </div>
 </div>
 
+<div class="container">
+      <div class="wrapper-destinations">
+        <div class="row">
+        <% @expeditions.each do |exp| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= exp.picture_url%>');">
+              <div class="card-category"><span class="label label-success"><%= exp.theme%></span></div>
+              <div class="card-title">
+                <h3><%= exp.title %></h3>
+              </div>
+              <div class="card-description">
+                <p><%= exp.description %></p>
+              </div>
+              <img class="card-user avatar" src="http://placehold.it/100/100">
+              <%= link_to "", "", class: "card-link" %>
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+</div>
+

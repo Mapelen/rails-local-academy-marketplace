@@ -3,34 +3,31 @@
   <div class="title padded-xs">
     <h2> Your Upcoming trips </h2>
   </div>
-    <div class="expedition-reservation-card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%=  %>');">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="card-expedition-date">
-            <h3>13/05/05</h3>
-          </div>
-          <h2>some text</h2>
+  <% @current_user_expeditions.each do |expedition| %>
+    <div class="expedition-reservation-card" style="background-color: white">
+      <div class="reservation-card_date-header"><h2><%= expedition.title %></h2></div>
+      <div class="expedition-reservation-card_listing">
+        <div class="expedition-reservation-card_listing-header">
+          <span><%= expedition.description %></span>
         </div>
-        <div class="col-xs-12">
-          <div class="expedition-date">
-            <h3>18/05/05</h3>
+        <div class="expedition-reservation-card_departure">
+          <span class="expedition-reservation-card_info">
+
+          </span>
+          <span class="expedition-reservation-card_meta">
+            <span><%= expedition.starts_on %></span>
+            <span><%= expedition.ends_on %></span>
+          </span>
+          <div class="expedition-reservation-card_contact">
+            <span class="photo"></span>
+            <span class="expedition-reservation-card_control"></span>
           </div>
-          <h2>some text</h2>
         </div>
       </div>
     </div>
+  <% end %>
   <div class="title padded-xs">
     <h2> Your Past trips </h2>
   </div>
 </div>
 
-
-
-<% @current_user_expeditions.each do |expedition| %>
-<ul>
-  <li><%= expedition.title %></li>
-  <li><%= expedition.description %></li>
-  <li><%= expedition.starts_on %></li>
-  <li><%= expedition.ends_on %></li>
-</ul>
-<% end %>

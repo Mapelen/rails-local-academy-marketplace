@@ -10,6 +10,7 @@ class ExpeditionsController < ApplicationController
     @destination = @expedition.destination
     @destinations = Destination.all
     @participation = Participation.new
+    @current_participation = Participation.find_by(user: current_user, expedition: @expedition)
   end
 
   def new
@@ -42,7 +43,7 @@ class ExpeditionsController < ApplicationController
   private
 
   def expedition_params
-    params.require(:expedition).permit(:title, :description, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
+    params.require(:expedition).permit(:title, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
   end
 
   def find_expedition

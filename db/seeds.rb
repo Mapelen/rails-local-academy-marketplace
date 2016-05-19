@@ -34,4 +34,3 @@ expedition4.save
 
 # Destination.create(name: "India")
 # Destination.create(name: "U.S. Northeast")
-

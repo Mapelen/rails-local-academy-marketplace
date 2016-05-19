@@ -36,7 +36,7 @@
         <% destination.expeditions.first(3).each do |exp| %>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= exp.photo%>');">
-              <div class="card-category"><span class="label label-success"><%= exp.theme%></span></div>
+              <div class="card-category"><span class="label label-success"><%= exp.theme %></span></div>
               <div class="card-title">
                 <h3><%= exp.title %></h3>
               </div>

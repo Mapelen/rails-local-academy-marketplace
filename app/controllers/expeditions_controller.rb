@@ -42,7 +42,7 @@ class ExpeditionsController < ApplicationController
   private
 
   def expedition_params
-    params.require(:expedition).permit(:title, :description, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
+    params.require(:expedition).permit(:title, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
   end
 
   def find_expedition

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :expeditions do
     resources :participations, only: [:new, :create]
   end
+  resources :participations, only: :destroy
   resources :destinations
 
 

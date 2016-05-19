@@ -8,15 +8,21 @@ div {
     display: block;
 }
 
-.place h5 {
-    font-size: 14px;
-}
-
 p {
     margin: 0;
 }
 
-.row:before {
-    display: table;
-    content: " ";
+
+.unsubscribe {
+  font-size: 9px;
+  color: grey;
 }
+
+.bg-success {
+  font-size: 16px;
+}
+
+// .row:before {
+//     display: table;
+//     content: " ";
+// }

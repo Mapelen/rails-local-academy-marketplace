@@ -10,7 +10,7 @@
 }
 
 .participation p {
-  font-size: 12px;
+  font-size: 16px;
   width: 150px;
   display: inline-block;
   margin-left: 18px;
@@ -25,4 +25,17 @@
   border: solid 1px #cbc9c9;
 }
 
+.unsubscribe {
+  font-size: 9px;
+  color: grey;
+  text-decoration: underline;
+}
 
+.unsubscribe {
+  font-size: 9px;
+  color: black;
+}
+
+.bg-success p {
+  font-size: 20px;
+}

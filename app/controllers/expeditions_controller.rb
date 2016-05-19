@@ -10,6 +10,7 @@ class ExpeditionsController < ApplicationController
     @destination = @expedition.destination
     @destinations = Destination.all
     @participation = Participation.new
+    @current_participation = Participation.find_by(user: current_user, expedition: @expedition)
   end
 
   def new

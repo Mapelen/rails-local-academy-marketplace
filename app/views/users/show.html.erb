@@ -1,0 +1,31 @@
+<div class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="flex-box">
+          <div class="img-box">
+            <%= image_tag current_user.photo.url, class: "avatar-xxl" %>
+          </div>
+          <div class="headbox">
+            <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="boxie text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-info" %></div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <ul class="list-inline list-unstyled">
+        <li><i class="fa fa-envelope" aria-hidden="true" ></i>   <%= current_user.email %></li>
+        <li>blabla</li>
+        <li>blabla</li>
+        <li>blabla</li>
+        <li>blabla</li>
+      </ul>
+    </div>
+  </div>
+</div>

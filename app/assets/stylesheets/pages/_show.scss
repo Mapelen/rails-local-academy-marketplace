@@ -1,0 +1,16 @@
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40vh;
+}
+
+.headbox {
+  padding: 20px;
+}
+
+.boxie {
+  margin: 20px 0px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid lightgrey;
+}

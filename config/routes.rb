@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
   resources :participations, only: :destroy
   resources :destinations
+  resources :users, only: [:show, :edit, :update]
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

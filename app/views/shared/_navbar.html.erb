@@ -34,14 +34,10 @@
       <div class="dropdown">
         <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-           <% if user_signed_in? %>
-          <li><a href="#">Profile</a></li>
-          <% end %>
           <% if user_signed_in? %>
-          <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-          <% end %>
-          <% if user_signed_in? %>
-          <li><a href="/dashboard">Dashboard</a></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <li><a href="/dashboard">Dashboard</a></li>
           <% end %>
           <li><a href="#">About</a></li>
         </ul>

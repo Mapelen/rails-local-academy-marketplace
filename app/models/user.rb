@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:linkedin]
   has_many :participations
   has_many :expeditions, through: :participations
+  mount_uploader :photo, PhotoUploader
 
   def self.find_for_linkedin_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

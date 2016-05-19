@@ -14,4 +14,5 @@ class PagesController < ApplicationController
     @current_user_participations = current_user.participations
     @current_user_expeditions = current_user.expeditions
   end
+
 end

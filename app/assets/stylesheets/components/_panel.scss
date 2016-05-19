@@ -1,5 +1,5 @@
 
-.btn {
+.btnparticipation {
   background-color: $red;
   color:white;
 }
@@ -9,18 +9,18 @@
   box-shadow: none;
 }
 
-.panel p {
+.participation p {
   font-size: 12px;
   width: 150px;
   display: inline-block;
   margin-left: 18px;
 }
 
-.panel label {
+.participation label {
   margin: 5px;
 }
 
-.panel {
+.participation {
   text-align: center;
   border: solid 1px #cbc9c9;
 }

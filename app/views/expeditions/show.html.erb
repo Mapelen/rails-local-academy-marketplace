@@ -1,5 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= @expedition.photo.url %>);">
   <div class = "banner-expedition">
+
     <h1><%= @expedition.title %></h1>
     <p><%= @expedition.description %></p>
     <h2>#<%= @expedition.theme %></h2>
@@ -13,13 +14,60 @@
 <!--         <div class ="organizer">
           <h2>The organizer</h2>
         </div> -->
-        <div class = "destination">
-          <h2>The destination: <%= @destination.name %> </h2>
-          <p><%= @destination.description %></p>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="glyphicon glyphicon-road"> The destination:
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%= @destination.name %>  - <%= @destination.description%></span>
+            </p>
+          </div>
         </div>
-        <div class = "lex" >
-          <p><%= @expedition.title %></p>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="glyphicon glyphicon-road"> The number of participants:
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%= @expedition.capacity %></span>
+            </p>
+          </div>
         </div>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="glyphicon glyphicon-road"> The destination:
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%= @destination.name %> - <%= @destination.description%></span>
+            </p>
+          </div>
+        </div>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="glyphicon glyphicon-road"> The expedition: <%= @expedition.title %>
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%= @expedition.description %></span>
+            </p>
+          </div>
+        </div>
+
+
       </div>
 
       <div class="col-xs-12 col-md-3">
@@ -29,11 +77,11 @@
           <% else %>
             <div class = "form">
               <%= simple_form_for([@expedition, @participation]) do |f| %>
-              <h2> Next expedition is on: <%= @expedition.starts_on %></h2>
+              <h5> Next expedition will start on: <%= @expedition.starts_on %></h5>
               <%= f.collection_radio_buttons :is_company, [[true, 'Company'] ,[false, 'Individual']], :first, :last%>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :expedition_id, value: @expedition.id %>
-              <%= f.submit "I'm signing up!", class: "btn btn-primary" %>
+              <%= f.submit "Sign me up!", class: "btn" %>
               <% end %>
             </div>
           <% end %>

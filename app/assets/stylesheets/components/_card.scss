@@ -93,6 +93,25 @@
 
 }
 
+
+.expedition-reservation-card {
+color: white;
+text-align: center;
+position: relative;
+height: 40vh;
+border-radius: 2px 2px 0 0;
+/* if you have a 70px navbar => height: calc(100vh - 70px); */
+background-size: cover !important;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 60px;
+}
+
+.card-expedition-date {
+  position: absolute;
+  left: 10px;
+
 .card-form {
   background-color: white;
   box-shadow: 2px 2px 2px lightgrey;

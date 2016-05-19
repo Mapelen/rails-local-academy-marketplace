@@ -1,0 +1,22 @@
+.container .place-row {
+    margin-top: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+div {
+    display: block;
+}
+
+.place h5 {
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+}
+
+.row:before {
+    display: table;
+    content: " ";
+}

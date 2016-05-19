@@ -13,16 +13,21 @@ p {
 }
 
 
-.unsubscribe {
-  font-size: 9px;
-  color: grey;
-}
-
-.bg-success {
-  font-size: 16px;
-}
-
-// .row:before {
-//     display: table;
-//     content: " ";
+// .unsubscribe {
+//   font-size: 12px;
+//   color: grey;
 // }
+
+// .bg-success {
+//   font-size: 20px;
+// }
+
+.row:before {
+    display: table;
+    content: " ";
+}
+
+.fa {
+  font-size: 20px;
+  font-weight: bold;
+}

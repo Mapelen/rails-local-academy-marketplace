@@ -16,10 +16,8 @@
         </div> -->
         <div class = "row place-row">
           <div class="col-md-4">
-            <h5>
               <span class ="fa fa-plane"> The destination:
               </span>
-            </h5>
           </div>
           <div class="col-md-8">
             <p class ="place-content">
@@ -65,16 +63,23 @@
             <%= link_to "I want to unsubscribe", participation_path(@current_participation), method: :delete, class: "unsubscribe" %>
 
           <% else %>
+            <% if @expedition.participations.count < @expedition.capacity %>
             <div class = "form">
               <%= simple_form_for([@expedition, @participation]) do |f| %>
               <h5> Next expedition will start on: <%= @expedition.starts_on %></h5>
-              <h5> Spots left: <%= @expedition.capacity %></h5>
+              <h5> Spots left: <%= @expedition.capacity - @expedition.participations.count  %></h5>
+              <h5> People who signed up: <%= @expedition.participations.count %></h5>
               <%= f.collection_radio_buttons :is_company, [[true, 'Company'] ,[false, 'Individual']], :first, :last%>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :expedition_id, value: @expedition.id %>
               <%= f.submit "Sign me up!", class: "btnparticipation" %>
               <% end %>
             </div>
+
+            <% else %>
+              <h5> This expedition is full! </h5>
+
+            <% end %>
           <% end %>
         </div>
       </div>

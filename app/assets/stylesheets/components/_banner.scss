@@ -33,6 +33,19 @@
   margin-top: 60px;
 }
 
+.banner-extra-small {
+  color: white;
+  text-align: center;
+  height: 30vh;
+  border-radius: 2px 2px 0 0;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
 .banner-expedition {
   height: 200px;
 }

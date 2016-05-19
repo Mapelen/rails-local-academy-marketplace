@@ -71,7 +71,7 @@
       </div>
 
       <div class="col-xs-12 col-md-3">
-        <div class = "panel">
+        <div class = "participation">
           <% if @expedition.users.include?(current_user) %>
             <p class="bg-success">You're signed up!</p>
           <% else %>
@@ -81,7 +81,7 @@
               <%= f.collection_radio_buttons :is_company, [[true, 'Company'] ,[false, 'Individual']], :first, :last%>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :expedition_id, value: @expedition.id %>
-              <%= f.submit "Sign me up!", class: "btn" %>
+              <%= f.submit "Sign me up!", class: "btnparticipation" %>
               <% end %>
             </div>
           <% end %>

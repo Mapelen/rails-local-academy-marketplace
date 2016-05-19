@@ -1,25 +1,26 @@
 <div class="wrapper style1">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="flex-box">
-        <div class="img-box">
-          <img src="http://images-cdn.moviepilot.com/images/c_scale,h_372,w_500/t_mp_quality_gif/xa15lfitmeyam5qz08yr/henry-cavill-proves-that-clark-kent-s-disguise-isn-t-so-bad-after-all-894438.gif" alt="" class="avatar-xxl">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="flex-box">
+          <div class="img-box">
+            <%= image_tag current_user.photo.url, class: "avatar-xxl" %>
+          </div>
+          <div class="headbox">
+            <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+          </div>
         </div>
-        <div class="headbox">
-          <h2>Clark Kent<%= @user.first_name %> <%= @user.last_name %></h2>
-        </div>
-      </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="container">
+  <div class="boxie text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-info" %></div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <ul>
-        <li>blabla</li>
+        <li><%= current_user.email %></li>
         <li>blabla</li>
         <li>blabla</li>
         <li>blabla</li>

@@ -1,8 +1,12 @@
 .wrapper {
-
+  height: 40vh;
 }
 
 .style1 {
-  background-color: #f8f2c9;
-  height: 60vh;
+  background-color: $green;
+}
+
+.style1 h2 {
+  color: white;
+  font-style: bold;
 }

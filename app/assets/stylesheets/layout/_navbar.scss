@@ -129,3 +129,18 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+.navbar-edu-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: white;
+  color: #B3B3B3;
+  font-size: 14px;
+  border: 2px solid $brand-color;
+}
+.navbar-edu-button:hover {
+  color: white;
+  background: $brand-color;
+}

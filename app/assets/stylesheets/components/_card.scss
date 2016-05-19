@@ -33,7 +33,7 @@
   }
 .card-title {
     position: absolute;
-    top: -52px;
+    top: -25px;
   }
 
 .card-title h3 {
@@ -76,12 +76,20 @@
     margin-bottom: 30px;
 }
 
-// .card-cta-link {
-//   top: 0;
-//   bottom: 0;
-//   width: 100%;
-//   z-index:2;
-//   background: black;
-//   opacity: 0;
-// }
+.card-cta-link {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.card-cta-link:hover{
+  text-decoration: none;
+  h3 {
+    font-size: 70px;
+  }
+
+}
 

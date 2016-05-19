@@ -81,7 +81,7 @@
               <%= f.collection_radio_buttons :is_company, [[true, 'Company'] ,[false, 'Individual']], :first, :last%>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :expedition_id, value: @expedition.id %>
-              <%= f.submit "Sign me up!", class: "btn" %>
+              <%= f.submit "Sign me up!", class: "btnparticipation" %>
               <% end %>
             </div>
           <% end %>

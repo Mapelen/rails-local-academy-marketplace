@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="title padded-xs">
+    <h2> Your Upcoming trips </h2>
+  </div>
+  <% @current_user_expeditions.each do |expedition| %>
+    <div class="expedition-reservation-card" style="background-color: white">
+      <div class="reservation-card_date-header"><h2><%= expedition.title %></h2></div>
+      <div class="expedition-reservation-card_listing">
+        <div class="expedition-reservation-card_listing-header">
+          <span><%= expedition.description %></span>
+        </div>
+        <div class="expedition-reservation-card_departure">
+          <span class="expedition-reservation-card_info">
+
+          </span>
+          <span class="expedition-reservation-card_meta">
+            <span><%= expedition.starts_on %></span>
+            <span><%= expedition.ends_on %></span>
+          </span>
+          <div class="expedition-reservation-card_contact">
+            <span class="photo"></span>
+            <span class="expedition-reservation-card_control"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="title padded-xs">
+    <h2> Your Past trips </h2>
+  </div>
+</div>
+

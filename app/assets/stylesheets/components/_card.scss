@@ -93,6 +93,65 @@
 
 }
 
+
+.expedition-reservation-card {
+color: black;
+position: relative;
+height: 40vh;
+border-radius: 2px 2px 0 0;
+/* if you have a 70px navbar => height: calc(100vh - 70px); */
+background-size: cover !important;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 60px;
+}
+
+.reservation-card_date-header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+}
+
+.expedition-reservation-card_listing {
+
+}
+
+.expedition-reservation-card_listing-header {
+  position: absolute;
+  top: center;
+  left: 10px;
+}
+
+.expedition-reservation-card_departure {
+
+}
+
+.expedition-reservation-card_info {
+
+}
+
+.expedition-reservation-card_meta {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.expedition-reservation-card_contact {
+
+}
+
+.expedition-reservation-card_control {
+
+}
+
+
+.card-expedition-date {
+  position: absolute;
+  left: 10px;
+}
+
 .card-form {
   background-color: white;
   box-shadow: 2px 2px 2px lightgrey;

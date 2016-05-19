@@ -2,15 +2,18 @@
 .btnparticipation {
   background-color: $red;
   color:white;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: none;
 }
 
 .btn:hover {
   top: 3px;
-  box-shadow: none;
+  // box-shadow: none;
 }
 
-.participation p {
-  font-size: 12px;
+.participation h5 {
+  font-size: 16px;
   width: 150px;
   display: inline-block;
   margin-left: 18px;
@@ -20,9 +23,28 @@
   margin: 5px;
 }
 
+.form{
+    background: white;
+}
+
 .participation {
   text-align: center;
   border: solid 1px #cbc9c9;
+}
+
+.unsubscribe {
+  font-size: 9px;
+  color: grey;
+  text-decoration: underline;
+}
+
+.unsubscribe {
+  font-size: 9px;
+  color: black;
+}
+
+.bg-success p {
+  font-size: 20px;
 }
 
 

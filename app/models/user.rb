@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:linkedin]
   has_many :participations
+  has_many :expeditions, through: :participations
   mount_uploader :photo, PhotoUploader
 
   def self.find_for_linkedin_oauth(auth)

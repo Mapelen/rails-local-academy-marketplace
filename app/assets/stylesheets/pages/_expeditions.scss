@@ -8,15 +8,26 @@ div {
     display: block;
 }
 
-.place h5 {
-    font-size: 14px;
-}
-
 p {
     margin: 0;
 }
 
+
+// .unsubscribe {
+//   font-size: 12px;
+//   color: grey;
+// }
+
+// .bg-success {
+//   font-size: 20px;
+// }
+
 .row:before {
     display: table;
     content: " ";
+}
+
+.fa {
+  font-size: 20px;
+  font-weight: bold;
 }

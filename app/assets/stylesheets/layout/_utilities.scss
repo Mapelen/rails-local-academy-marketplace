@@ -10,6 +10,11 @@
   padding-bottom: 5em;
 }
 
+.padded-xs {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -22,4 +27,7 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+#img-linkedin {
+  width: 200px;
 }

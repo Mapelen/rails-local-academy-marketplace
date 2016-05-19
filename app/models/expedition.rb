@@ -6,8 +6,8 @@ class Expedition < ActiveRecord::Base
 
   validates :title, uniqueness: true, presence: true
   validates :description, presence: true
-  validates :start_on, presence: true
-  validates :end_on, presence: true
+  validates :starts_on, presence: true
+  validates :ends_on, presence: true
   validates :capacity, presence: true
   validates :theme, presence: true
   validates :destination, presence: true

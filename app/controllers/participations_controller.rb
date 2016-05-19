@@ -6,12 +6,19 @@ class ParticipationsController < ApplicationController
   end
 
   def create
+    @participations = Participation.all
     @participation = Participation.new(participation_params)
     if @participation.save
       redirect_to expedition_path(@expedition)
     else
       render "expeditions/new"
     end
+  end
+
+  def show
+    @participations = Participation.all
+    @expeditions = Expedition.all
+    @participation = Participation.find_by(user: user, expedition: @current_expedition)
   end
 
   def destroy

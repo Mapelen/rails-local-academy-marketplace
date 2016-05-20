@@ -1,5 +1,5 @@
 class ParticipationsController < ApplicationController
-  before_action :find_expedition, only: [:new, :create, :declination]
+  before_action :find_expedition, only: [:new, :create]
 
   def new
     @participation = Participation.new

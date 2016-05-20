@@ -20,6 +20,7 @@ class ExpeditionsController < ApplicationController
 
   def create
     @expedition = @destination.expeditions.build(expedition_params)
+    @expedition.user_id = current_user.id
     if @expedition.save
       redirect_to expedition_path(@expedition)
     else
@@ -43,7 +44,7 @@ class ExpeditionsController < ApplicationController
   private
 
   def expedition_params
-    params.require(:expedition).permit(:title, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
+    params.require(:expedition).permit(:title, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache, :user_id)
   end
 
   def find_expedition

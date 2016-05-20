@@ -1,32 +1,81 @@
 
 <div class="container">
-  <div class="title padded-xs">
-    <h3> Your Upcoming trips </h3>
-  </div>
-  <% @current_user_expeditions.each do |expedition| %>
-  <div class="container-expedition-card">
-    <div class="expedition-reservation-card" style="background-color: white">
-    <img class="expedition-reservation-card-photo" src="http://i.imgur.com/JvEwkET.jpg">
-      <div class="reservation-card_date-header"><span><%= expedition.title %></span></div>
-      <div class="expedition-reservation-card_listing">
-        <div class="expedition-reservation-card_listing-header">
-          <span><%= expedition.description %></span>
-        </div>
-        <div class="expedition-reservation-card_departure">
-          <span class="expedition-reservation-card_info">
-          </span>
-          <span class="expedition-reservation-card_meta">
-            <span><strong>start date:</strong> <%= expedition.starts_on %></span>
-            <span><strong>end date:</strong> <%= expedition.ends_on.to_s %></span>
-          </span>
-          <img class="expedition-reservation-participant avatar-large" src="<%= current_user.photo.url %>">
+  <div class = "user-participation">
+    <div class="title padded-xs">
+      <h3> Your next participations in trips </h3>
+    </div>
+    <% @current_user_expeditions.each do |expedition| %>
+    <div class="container-expedition-card">
+      <div class="expedition-reservation-card" style="background-color: white">
+      <img class="expedition-reservation-card-photo" src="http://i.imgur.com/JvEwkET.jpg">
+        <div class="reservation-card_date-header"><span><%= expedition.title %></span></div>
+        <div class="expedition-reservation-card_listing">
+          <div class="expedition-reservation-card_listing-header">
+            <span><%= expedition.description %></span>
+          </div>
+          <div class="expedition-reservation-card_departure">
+            <span class="expedition-reservation-card_info">
+            </span>
+            <span class="expedition-reservation-card_meta">
+              <span><strong>start date:</strong> <%= expedition.starts_on %></span>
+              <span><strong>end date:</strong> <%= expedition.ends_on.to_s %></span>
+            </span>
+            <img class="expedition-reservation-participant avatar-large" src="<%= current_user.photo.url %>">
+          </div>
         </div>
       </div>
+    <% end %>
     </div>
-  <% end %>
   </div>
-  <div class="title padded-xs">
-    <h3> Your Past trips </h3>
+
+  <div class = "user-organization">
+    <div class="title padded-xs">
+      <h3> The next trips you organize</h3>
+    </div>
+    <% @current_user_expeditions.each do |expedition| %>
+    <div class="container-expedition-card">
+      <div class="expedition-reservation-card" style="background-color: white">
+      <img class="expedition-reservation-card-photo" src="http://i.imgur.com/JvEwkET.jpg">
+        <div class="reservation-card_date-header"><span><%= expedition.title %></span></div>
+        <div class="expedition-reservation-card_listing">
+          <div class="expedition-reservation-card_listing-header">
+            <span><%= expedition.description %></span>
+          </div>
+          <div class="expedition-reservation-card_departure">
+            <span class="expedition-reservation-card_info">
+            </span>
+            <span class="expedition-reservation-card_meta">
+              <span><strong>start date:</strong> <%= expedition.starts_on %></span>
+              <span><strong>end date:</strong> <%= expedition.ends_on.to_s %></span>
+            </span>
+            <img class="expedition-reservation-participant avatar-large" src="<%= current_user.photo.url %>">
+          </div>
+        </div>
+      </div>
+      <div>
+        <% expedition.participations.each do |participation| %>
+          <% if participation.accepted == nil %>
+            <span><%= participation.user.first_name %></span>
+            <div id="acceptation<%= participation.id %>">
+            <%= button_to accepted_path(id: participation.id),
+            :class => "btn btn-sm btn-success", :method => :post, remote: :true do %>
+              Accept <span class="fa fa-thumbs-o-up">
+            <% end %>
+            </div>
+            <div id="declination<%= participation.id %>">
+            <%= button_to declined_path(id: participation.id),
+            :class => "btn btn-sm btn-s btn-danger", :method => :post, remote: :true do %>
+              Decline <span class="fa fa-thumbs-o-down">
+            <% end %>
+            </div>
+          <% else %>
+            <h4> Participant </h4>
+          <% end %>
+
+
+        <% end %>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>
-

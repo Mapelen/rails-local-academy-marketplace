@@ -58,12 +58,14 @@
 
       <div class="col-xs-12 col-md-3">
         <div class = "participation">
-          <% if @expedition.users.include?(current_user) %>
-            <p class= "bg-success">You're signed up!</p>
-            <%= link_to "I want to unsubscribe", participation_path(@current_participation), method: :delete, class: "unsubscribe" %>
+<!-- La participation du user a été validée -->
+          <%# if @expedition.users.include?(current_user) && @expedition.participation.accept == true  %>
+<!--             <p class= "bg-success">You're signed up!</p>
+            <%# link_to "I want to unsubscribe", participation_path(@current_participation), method: :delete, class: "unsubscribe" %>
+          <%# else %>  -->
 
-          <% else %>
-            <% if @expedition.participations.count < @expedition.capacity %>
+          <!-- Afficher le formulaire s'il reste de la place -->
+            <% if @expedition.participations.count < @expedition.capacity && @current_participation.nil? %>
             <div class = "form">
               <%= simple_form_for([@expedition, @participation]) do |f| %>
               <h5> Next expedition will start on: <%= @expedition.starts_on %></h5>
@@ -75,12 +77,25 @@
               <%= f.submit "Sign me up!", class: "btnparticipation" %>
               <% end %>
             </div>
-
+            <!-- Fin du formulaire -->
+            <!-- Afficher une alerte pour dire que le booking est pending -->
+            <!-- Si l'expé est full, le signaler -->
+            <% elsif @current_participation %>
+              <% if  @current_participation.accepted.nil? %>
+                <p class="bg-warning" role="alert"> Thank you! Your application is pending.</p>
+                <%= link_to "I want to cancel my application", participation_path(@current_participation), method: :delete, class: "unsubscribe" %>
+              <% elsif @current_participation.accepted %>
+                <p class= "bg-success">You're signed up!</p>
+                <%= link_to "I want to unsubscribe", participation_path(@current_participation), method: :delete, class: "unsubscribe" %>
+                <!-- show it's accepted -->
+              <% elsif !@current_participation.accepted %>
+                <!-- show it's declined -->
+              <% end %>
             <% else %>
               <h5> This expedition is full! </h5>
-
             <% end %>
-          <% end %>
+            <!-- Fin du signalement -->
+          <%# end %>
         </div>
       </div>
 
@@ -93,3 +108,12 @@
   <input type="text" name="name" id="name" placeholder="Email" required/>
 
  -->
+
+<% if current_user.id == @expedition.user_id %>
+  <div class="boxie text-center">
+    <%= link_to "Edit expedition", edit_expedition_path(current_user), class: "btn btn-primary" %>
+  </div>
+  <div class="boxie text-center">
+    <%= link_to "Cancel expedition", expeditions_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+<% end %>

@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @participations = Participation.all
     @current_user_participations = current_user.participations
     @current_user_expeditions = current_user.expeditions
+    @current_organizing_expeditions = Expedition.where(user_id: current_user.id)
   end
 
 end

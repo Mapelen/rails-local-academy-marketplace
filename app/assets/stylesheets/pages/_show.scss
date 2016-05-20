@@ -2,11 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 40vh;
+  height: 60vh;
 }
 
 .headbox {
   padding: 20px;
+}
+
+.headbox h4 {
+  font-style: italic;
+  font-size: 30px;
+  color: white;
+}
+
+.headbox li {
+  font-size: 20px;
+  color: white;
 }
 
 .boxie {
@@ -14,3 +25,8 @@
   padding-bottom: 20px;
   border-bottom: 2px solid lightgrey;
 }
+
+.bio {
+  margin: 20px 0px;
+}
+

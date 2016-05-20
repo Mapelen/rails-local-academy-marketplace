@@ -8,7 +8,16 @@
     <div class="container-expedition-card">
       <div class="expedition-reservation-card" style="background-color: white">
       <img class="expedition-reservation-card-photo" src="http://i.imgur.com/JvEwkET.jpg">
-        <div class="reservation-card_date-header"><span><%= expedition.title %></span></div>
+        <div class="reservation-card_date-header">
+          <span><%= expedition.title %></span>
+        </div>
+          <% if (Participation.find_by expedition_id: expedition.id).accepted %>
+            <a href="#" class="label label-success expedition-reservation-card-button">Participant</a>
+          <% elsif (Participation.find_by expedition_id: expedition.id).accepted.nil? %>
+            <a href="#" class="label label-warning expedition-reservation-card-button">Pending</a>
+          <% else  %>
+            <a href="#" class="label label-danger expedition-reservation-card-button">Denied</a>
+          <% end %>
         <div class="expedition-reservation-card_listing">
           <div class="expedition-reservation-card_listing-header">
             <span><%= expedition.description %></span>
@@ -53,26 +62,31 @@
         </div>
       </div>
       <div>
+        <h5>My participants for this learning expedition</h5>
         <% expedition.participations.each do |participation| %>
           <% if participation.accepted == nil %>
-            <span><%= participation.user.first_name %></span>
-            <div id="acceptation<%= participation.id %>">
-            <%= button_to accepted_path(id: participation.id),
-            :class => "btn btn-sm btn-success", :method => :post, remote: :true do %>
-              Accept <span class="fa fa-thumbs-o-up">
-            <% end %>
+
+            <span>Participation name:<%= participation.user.first_name %><%= participation.user.last_name %></span>
+
+            <div class="accept-buttons" id="acceptation<%= participation.id %>">
+              <%= button_to accepted_path(id: participation.id),
+              :class => "btn btn-sm btn-success", :method => :post, remote: :true do %>
+                Accept <span class="fa fa-thumbs-o-up">
+                <% end %>
+
+              <%= button_to declined_path(id: participation.id),
+              :class => "btn btn-sm btn-s btn-danger", :method => :post, remote: :true do %>
+                Decline <span class="fa fa-thumbs-o-down">
+                <% end %>
             </div>
-            <div id="declination<%= participation.id %>">
-            <%= button_to declined_path(id: participation.id),
-            :class => "btn btn-sm btn-s btn-danger", :method => :post, remote: :true do %>
-              Decline <span class="fa fa-thumbs-o-down">
-            <% end %>
-            </div>
+
           <% else %>
-            <h4> Participant </h4>
+            <% if participation.accepted == true %>
+              <a href="#" class="btn btn-success">Participant</a>
+            <% elsif participation.accepted == false %>
+              <a href="#" class="btn btn-danger">Declined</a>
+            <% end %>
           <% end %>
-
-
         <% end %>
       </div>
     </div>

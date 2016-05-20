@@ -18,7 +18,7 @@
               <li>Company: <%= @user.company %></li>
             </ul>
             <% if current_user == @user %>
-              <div class="text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary" %></div>
+              <div class="text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn" %></div>
             <% end %>
           </div>
         </div>
@@ -26,10 +26,3 @@
     </div>
   </div>
 </div>
-<!--
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
-    </div>
-  </div>
-</div> -->

@@ -30,21 +30,27 @@
     </a> -->
 
     <!-- Profile picture and dropdown -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <% if user_signed_in? %>
-            <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-          <% end %>
-          <li><a href="#">About</a></li>
-        </ul>
+    <% if user_signed_in? %>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag current_user.photo.url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: "dropdown" } %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <% if user_signed_in? %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><a href="/dashboard">Dashboard</a></li>
+              <li><a href="#">About</a></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
+      <div class="navbar-wagon-item">
+        <%= link_to "Organize Expedition", new_expedition_path, class: "navbar-wagon-item navbar-edu-button btn" %>
+      </div>
+      <% else %>
+        <p><a href="#">About</a></p>
+    <% end %>
 
-    <%= link_to "Organize Expedition", new_expedition_path, class: "navbar-wagon-item navbar-edu-button btn" %>
     <!--Login In Button -->
     <% if user_signed_in? %>
       <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "navbar-wagon-item navbar-wagon-button btn" %>
@@ -52,8 +58,6 @@
       <%= link_to "Login", "#", class: "navbar-wagon-item", data: { target: "#login", toggle: "modal" } %>
     <% end %>
 
-    <!-- Button (call-to-action) -->
-    <!-- <a href="/users/sign_up" class="navbar-wagon-item navbar-wagon-button btn">Sign Up</a> -->
     <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "hidden navbar-wagon-item navbar-wagon-button btn" %>
     <% else %>

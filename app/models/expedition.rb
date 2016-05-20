@@ -2,7 +2,7 @@ class Expedition < ActiveRecord::Base
   belongs_to :destination
   has_many :participations, dependent: :destroy
   has_many :users, through: :participations
-
+  has_many :reviews, dependent: :destroy
 
   validates :title, uniqueness: true, presence: true
   validates :description, presence: true

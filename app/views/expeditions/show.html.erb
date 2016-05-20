@@ -117,3 +117,16 @@
     <%= link_to "Cancel expedition", expeditions_path, method: :delete, class: "btn btn-danger" %>
   </div>
 <% end %>
+
+<div class="container">
+  <div class="col-xs-12 col-sm-4">
+    <h3 class="text-center">Commentez l'expedition' !</h3>
+    <div class="form line-vertical">
+      <%= simple_form_for [@expedition, @review] do |f| %>
+        <%= f.input :content, label: "Commentaire" %>
+        <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Note" %>
+        <%= f.button :submit, input_html: {class: "text-center btn btn-info"} %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   resources :expeditions do
     resources :participations, only: [:new, :create]
+    resources :reviews, only: [:create, :edit]
   end
   resources :participations, only: :destroy
   resources :destinations

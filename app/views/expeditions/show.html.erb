@@ -1,4 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= @expedition.photo.url %>);">
+  <div class="boutons">
+    <% if current_user.id == @expedition.user_id %>
+      <ul class="list-inline list-unstyled">
+        <li>
+          <%= link_to "Edit expedition", edit_expedition_path(current_user), class: "btn btn-primary" %>
+        </li>
+        <li>
+          <%= link_to "Cancel expedition", expeditions_path, method: :delete, class: "btn btn-danger" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
   <div class = "banner-expedition">
     <h1><%= @expedition.title %></h1>
     <h2>#<%= @expedition.theme %></h2>
@@ -97,16 +109,30 @@
           <%# end %>
         </div>
       </div>
+    </div>
 
+    <div class="col-xs-12 col-sm-12">
+      <h3 class="text-center">Commentez l'expedition !</h3>
+      <div class="card-form">
+        <%= simple_form_for [@expedition, @review] do |f| %>
+          <%= f.input :content, label: "Commentaire" %>
+          <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Note" %>
+          <%= f.button :submit, input_html: {class: "text-center btn btn-info"} %>
+        <% end %>
+      </div>
+      <div class="card-review col-xs-12 col-sm-12">
+        <ul class="show-input">
+          <% @expedition.reviews.reverse_each do |review| %>
+          <li class="list-unstyled text-center">
+            <h5>" <%= review.content %> Rated : <%= review.rating %> / 5 "</h5>
+            <!--= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %-->
+          </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div><!--
-
-  <h2>Send the information</h2>
-  <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Email" required/>
-
- -->
+</div>
 
  <div class="container">
 
@@ -307,12 +333,3 @@
   </script>
 
  </div>
-
-<% if current_user.id == @expedition.user_id %>
-  <div class="boxie text-center">
-    <%= link_to "Edit expedition", edit_expedition_path(current_user), class: "btn btn-primary" %>
-  </div>
-  <div class="boxie text-center">
-    <%= link_to "Cancel expedition", expeditions_path, method: :delete, class: "btn btn-danger" %>
-  </div>
-<% end %>

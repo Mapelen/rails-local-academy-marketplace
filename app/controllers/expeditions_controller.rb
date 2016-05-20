@@ -11,6 +11,7 @@ class ExpeditionsController < ApplicationController
     @destinations = Destination.all
     @participation = Participation.new
     @current_participation = Participation.find_by(user: current_user, expedition: @expedition)
+    @review = Review.new
   end
 
   def new

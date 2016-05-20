@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'home' => 'pages#home'
   get 'dashboard' => 'pages#dashboard'
+  get 'about' => 'pages#about'
   resources :expeditions do
     resources :participations, only: [:new, :create]
   end

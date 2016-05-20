@@ -34,12 +34,17 @@ class ExpeditionsController < ApplicationController
   end
 
   def update
-
+    if @expedition.update(expedition_params)
+      redirect_to expedition_path(@expedition)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    find_expedition
     @expedition.destroy
-    redirect_to expeditions_path
+    redirect_to home_path
   end
 
   private

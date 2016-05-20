@@ -7,15 +7,15 @@
         <%= simple_form_for @expedition do |f| %>
         <div class="row">
           <div class="col-xs-12 col-sm-6">
-            <%= f.input :title, label: "Expedition title" %>
+            <%= f.input :title, label: "Expedition title", placeholder: "Title", input_html: {maxlength: 30} %>
             <%= f.input :destination, label: "Destination", collection: @destinations %>
-            <%= f.input :description, label: "Expedition description" %>
-            <%= f.input :theme, label: "Expedition theme" %>
+            <%= f.input :description, label: "Expedition description", input_html: {maxlength: 150}, placeholder: "150 Char. Max" %>
+            <%= f.input :theme, label: "Expedition theme", input_html: {maxlength: 20}, placeholder: "Theme" %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
           </div>
           <div class="col-xs-12 col-sm-6">
-            <%= f.input :capacity, label: "Expedition capacity" %>
+            <%= f.input :capacity, label: "Expedition capacity", placeholder: "Max. num. participants" %>
             <%= f.input :starts_on, label: "Start date", id: "datepicker" %>
             <%= f.input :ends_on, label: "End date" %>
             <%= f.submit "Add expedition", class: "btn btn-success" %>
@@ -25,7 +25,6 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
 

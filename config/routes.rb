@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
+  post 'accepted', to: "participations#acceptation"
+  post 'declined', to: "participations#declination"
   get 'home' => 'pages#home'
   get 'dashboard' => 'pages#dashboard'
   resources :expeditions do

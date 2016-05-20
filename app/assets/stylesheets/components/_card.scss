@@ -95,42 +95,34 @@
 
 
 .expedition-reservation-card {
-color: black;
-position: relative;
-height: 40vh;
-border-radius: 2px 2px 0 0;
-/* if you have a 70px navbar => height: calc(100vh - 70px); */
-background-size: cover !important;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 60px;
+  color: black;
+  position: relative;
+  height: 20vh;
+  width: 70vw ;
+  border-radius: 2px 2px 0 0;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
 }
 
 .reservation-card_date-header {
   position: absolute;
   top: 10px;
-  left: 10px;
-
+  left: 160px;
+  font-size: 25px;
+  color: $brand-color;
 }
 
-.expedition-reservation-card_listing {
-
-}
 
 .expedition-reservation-card_listing-header {
   position: absolute;
-  top: center;
-  left: 10px;
+  top: 45px;
+  left: 160px;
 }
 
-.expedition-reservation-card_departure {
-
-}
-
-.expedition-reservation-card_info {
-
-}
 
 .expedition-reservation-card_meta {
   position: absolute;
@@ -138,12 +130,23 @@ margin-top: 60px;
   right: 10px;
 }
 
-.expedition-reservation-card_contact {
-
+.expedition-reservation-participant {
+  position: absolute;
+  left: 160px;
+  bottom: 20px;
+  border: 1px solid white;
 }
 
-.expedition-reservation-card_control {
-
+.expedition-reservation-card-photo {
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  border: 1px solid white;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 

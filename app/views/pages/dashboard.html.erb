@@ -1,33 +1,32 @@
 
 <div class="container">
   <div class="title padded-xs">
-    <h2> Your Upcoming trips </h2>
+    <h3> Your Upcoming trips </h3>
   </div>
   <% @current_user_expeditions.each do |expedition| %>
+  <div class="container-expedition-card">
     <div class="expedition-reservation-card" style="background-color: white">
-      <div class="reservation-card_date-header"><h2><%= expedition.title %></h2></div>
+    <img class="expedition-reservation-card-photo" src="http://i.imgur.com/JvEwkET.jpg">
+      <div class="reservation-card_date-header"><span><%= expedition.title %></span></div>
       <div class="expedition-reservation-card_listing">
         <div class="expedition-reservation-card_listing-header">
           <span><%= expedition.description %></span>
         </div>
         <div class="expedition-reservation-card_departure">
           <span class="expedition-reservation-card_info">
-
           </span>
           <span class="expedition-reservation-card_meta">
-            <span><%= expedition.starts_on %></span>
-            <span><%= expedition.ends_on %></span>
+            <span><strong>start date:</strong> <%= expedition.starts_on %></span>
+            <span><strong>end date:</strong> <%= expedition.ends_on.to_s %></span>
           </span>
-          <div class="expedition-reservation-card_contact">
-            <span class="photo"></span>
-            <span class="expedition-reservation-card_control"></span>
-          </div>
+          <img class="expedition-reservation-participant avatar-large" src="<%= current_user.photo.url %>">
         </div>
       </div>
     </div>
   <% end %>
+  </div>
   <div class="title padded-xs">
-    <h2> Your Past trips </h2>
+    <h3> Your Past trips </h3>
   </div>
 </div>
 

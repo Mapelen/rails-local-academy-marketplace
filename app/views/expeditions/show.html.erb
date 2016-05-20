@@ -111,8 +111,9 @@
       </div>
     </div>
 
+<% if @current_participation && @current_participation.accepted %>
     <div class="col-xs-12 col-sm-12">
-      <h3 class="text-center">Commentez l'expedition !</h3>
+      <h4 class="text-center">Commentez l'expédition !</h4>
       <div class="card-form">
         <%= simple_form_for [@expedition, @review] do |f| %>
           <%= f.input :content, label: "Commentaire" %>
@@ -133,6 +134,9 @@
     </div>
   </div>
 </div>
+<% else %>
+<h4 class="text-center">Participez à l'expédition pour pouvoir la commenter</h4>
+<% end %>
 
  <div class="container">
 

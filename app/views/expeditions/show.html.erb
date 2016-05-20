@@ -119,14 +119,24 @@
 <% end %>
 
 <div class="container">
-  <div class="col-xs-12 col-sm-4">
-    <h3 class="text-center">Commentez l'expedition' !</h3>
-    <div class="form line-vertical">
+  <div class="col-xs-12 col-sm-12">
+    <h3 class="text-center">Commentez l'expedition !</h3>
+    <div class="card-form">
       <%= simple_form_for [@expedition, @review] do |f| %>
         <%= f.input :content, label: "Commentaire" %>
         <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Note" %>
         <%= f.button :submit, input_html: {class: "text-center btn btn-info"} %>
       <% end %>
+    <div class="col-xs-12 col-sm-12">
+      <ul class="show-input">
+        <% @expedition.reviews.reverse_each do |review| %>
+        <li class="review text-center">
+          <h3><%= review.content %> <%= review.rating %> / 5</h3>
+          <!--= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %-->
+        </li>
+        <% end %>
+      </ul>
+    </div>
     </div>
   </div>
 </div>

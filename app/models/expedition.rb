@@ -4,7 +4,7 @@ class Expedition < ActiveRecord::Base
   has_many :users, through: :participations
   has_many :reviews, dependent: :destroy
 
-  validates :title, uniqueness: true, presence: true
+  validates :title, presence: true
   validates :description, presence: true
   validates :starts_on, presence: true
   validates :ends_on, presence: true

@@ -2,8 +2,10 @@
   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
     <div class="card-form">
       <%= simple_form_for(current_user) do |f| %>
-        <%= f.input :first_name, class: "form-control" %>
-        <%= f.input :last_name, class: "form-control"  %>
+        <%= f.input :first_name, class: "form-control", placeholder: "First Name" %>
+        <%= f.input :last_name, class: "form-control", placeholder: "Last Name" %>
+        <%= f.input :company, class: "form-control", input_html: {maxlength: 20}, placeholder: "Company"  %>
+        <%= f.input :bio, input_html: {maxlength: 140}, placeholder: "Describe Yourself in 140 Char. Max"  %>
         <%= f.input :photo, class: "form-control"  %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit %>

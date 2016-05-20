@@ -1,5 +1,5 @@
 class ParticipationsController < ApplicationController
-  before_action :find_expedition, only: [:new, :create]
+  before_action :find_expedition, only: [:new, :create, :declination]
 
   def new
     @participation = Participation.new
@@ -12,6 +12,23 @@ class ParticipationsController < ApplicationController
       redirect_to expedition_path(@expedition)
     else
       render "expeditions/new"
+    end
+  end
+
+  def acceptation
+    @participation = Participation.find(params[:id].to_i)
+    @participation.update(accepted: true)
+    respond_to do |format|
+      format.js
+    end
+    # ou .save avec une réaffctement de .accepted
+  end
+
+  def declination
+    @participation = Participation.find(params[:id].to_i)
+    @participation.update(accepted: false)
+    respond_to do |format|
+      format.js
     end
   end
 

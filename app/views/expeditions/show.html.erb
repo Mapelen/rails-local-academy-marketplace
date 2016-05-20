@@ -93,3 +93,12 @@
   <input type="text" name="name" id="name" placeholder="Email" required/>
 
  -->
+
+<% if current_user.id == @expedition.user_id %>
+  <div class="boxie text-center">
+    <%= link_to "Edit expedition", edit_expedition_path(current_user), class: "btn btn-primary" %>
+  </div>
+  <div class="boxie text-center">
+    <%= link_to "Cancel expedition", expeditions_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+<% end %>

@@ -14,10 +14,10 @@
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= exp.photo %>');">
               <div class="card-category"><h6><span class="label label-success"><%= exp.theme %></span></h6></div>
               <div class="card-title">
-                <h3><%= exp.title %></h3>
+                <h3><%= exp.title[0, 19] + "..." %></h3>
               </div>
               <div class="card-description">
-                <p><%= exp.description %></p>
+                <p><%= exp.description[0, 150] %></p>
               </div>
               <img class="card-user avatar" src="http://placehold.it/100/100">
               <%= link_to "", "", class: "card-link" %>
